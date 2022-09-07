@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <navigation android:id="@+id/loginNavigation"
+        app:startDestination="@id/forgetPasswordFragment">
+        <fragment
+            android:id="@+id/forgetPasswordFragment"
+            android:name="com.mehmetdulger.appnavigation.ForgetPasswordFragment"
+            android:label="fragment_forget_password"
+            tools:layout="@layout/fragment_forget_password" />
+        <fragment
+            android:id="@+id/loginFragment"
+            android:name="com.mehmetdulger.appnavigation.LoginFragment"
+            android:label="fragment_login"
+            tools:layout="@layout/fragment_login">
+            <action
+                android:id="@+id/action_loginFragment_to_forgetPasswordFragment"
+                app:destination="@id/forgetPasswordFragment" />
+            <action
+                android:id="@+id/action_loginFragment_to_homePageFragment"
+                app:destination="@id/homeNavigation" />
+        </fragment>
+    </navigation>
+    <navigation android:id="@+id/homeNavigation"
+        app:startDestination="@id/homePageFragment">
+        <fragment
+            android:id="@+id/settingsFragment"
+            android:name="com.mehmetdulger.appnavigation.SettingsFragment"
+            android:label="fragment_settings"
+            tools:layout="@layout/fragment_settings" />
+        <fragment
+            android:id="@+id/homePageFragment"
+            android:name="com.mehmetdulger.appnavigation.HomePageFragment"
+            android:label="fragment_home_page"
+            tools:layout="@layout/fragment_home_page">
+            <action
+                android:id="@+id/action_homePageFragment_to_settingsFragment"
+                app:destination="@id/settingsFragment" />
+        </fragment>
+    </navigation>
+</navigation>
