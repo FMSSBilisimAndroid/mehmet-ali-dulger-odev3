@@ -3,28 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/welcomeFragment">
 
-    <navigation android:id="@+id/loginNavigation"
-        app:startDestination="@id/forgetPasswordFragment">
-        <fragment
-            android:id="@+id/forgetPasswordFragment"
-            android:name="com.mehmetdulger.appnavigation.ForgetPasswordFragment"
-            android:label="fragment_forget_password"
-            tools:layout="@layout/fragment_forget_password" />
-        <fragment
-            android:id="@+id/loginFragment"
-            android:name="com.mehmetdulger.appnavigation.LoginFragment"
-            android:label="fragment_login"
-            tools:layout="@layout/fragment_login">
-            <action
-                android:id="@+id/action_loginFragment_to_forgetPasswordFragment"
-                app:destination="@id/forgetPasswordFragment" />
-            <action
-                android:id="@+id/action_loginFragment_to_homePageFragment"
-                app:destination="@id/homeNavigation" />
-        </fragment>
-    </navigation>
+
     <navigation android:id="@+id/homeNavigation"
         app:startDestination="@id/homePageFragment">
         <fragment
@@ -40,6 +21,38 @@
             <action
                 android:id="@+id/action_homePageFragment_to_settingsFragment"
                 app:destination="@id/settingsFragment" />
+        </fragment>
+    </navigation>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.mehmetdulger.appnavigation.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" >
+
+        <action
+            android:id="@+id/action_welcomeFragment_to_loginFragment"
+            app:destination="@id/loginNavigation" />
+    </fragment>
+    <navigation android:id="@+id/loginNavigation"
+        app:startDestination="@id/loginFragment">
+        <fragment
+            android:id="@+id/forgetPasswordFragment"
+            android:name="com.mehmetdulger.appnavigation.ForgetPasswordFragment"
+            android:label="fragment_forget_password"
+            tools:layout="@layout/fragment_forget_password" />
+        <fragment
+            android:id="@+id/loginFragment"
+            android:name="com.mehmetdulger.appnavigation.LoginFragment"
+            android:label="fragment_login"
+            tools:layout="@layout/fragment_login">
+            <action
+                android:id="@+id/action_loginFragment_to_forgetPasswordFragment"
+                app:destination="@id/forgetPasswordFragment" />
+            <action
+                android:id="@+id/action_loginFragment_to_homePageFragment"
+                app:destination="@id/homeNavigation"
+                app:popUpTo="@id/nav_graph"
+                app:popUpToInclusive="true"/>
         </fragment>
     </navigation>
 </navigation>

@@ -13,16 +13,15 @@
         tools:context=".HomePageFragment">
 
         <TextView
-            android:id="@+id/hamepageTextView"
+            android:id="@+id/homepageTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="HomePage"
-            app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="150dp"
+            android:text="@string/home_page"
             android:textSize="46sp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/settingsImageView"
@@ -30,20 +29,58 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
+            android:contentDescription="@string/setting_image"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:drawable/ic_menu_manage"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            tools:ignore="ImageContrastCheck" />
+
         <ImageView
             android:id="@+id/backIconHomePageImageView"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+            android:contentDescription="@string/back_icon"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="?attr/actionModeCloseDrawable"
-            android:contentDescription="@string/back_icon" />
+            app:srcCompat="?attr/actionModeCloseDrawable" />
 
+        <EditText
+            android:id="@+id/noteEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/write_note"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/noteTextView"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        <Button
+            android:id="@+id/noteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="@string/note"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/noteEditText" />
+
+        <TextView
+            android:id="@+id/noteTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="@string/write_yourself_a_note"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/homepageTextView" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

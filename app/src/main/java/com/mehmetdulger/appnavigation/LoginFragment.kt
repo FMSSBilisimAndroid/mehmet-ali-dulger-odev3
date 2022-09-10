@@ -19,7 +19,10 @@ class LoginFragment : Fragment() {
     ): View {
         fragmentLoginBinding = FragmentLoginBinding.inflate(inflater)
         return fragmentLoginBinding.root
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         fragmentLoginBinding.apply {
             loginButton.setOnClickListener {
                 clickLoginButton()
@@ -28,15 +31,18 @@ class LoginFragment : Fragment() {
                 clickForgotPasswordButton()
             }
         }
-
     }
 
     private fun clickLoginButton() {
         val username = fragmentLoginBinding.usernameEditText.text
         val password = fragmentLoginBinding.passwordEditText.text
         if (username.isNullOrEmpty() && password.isNullOrEmpty()) {
-            Toast.makeText(requireActivity(), "Username and password cannot be empty!", Toast.LENGTH_SHORT)
-              .show()
+            Toast.makeText(
+                context,
+                "Username and password cannot be empty!",
+                Toast.LENGTH_SHORT
+            )
+                .show()
         } else {
             findNavController().navigate(R.id.action_loginFragment_to_homePageFragment)
         }

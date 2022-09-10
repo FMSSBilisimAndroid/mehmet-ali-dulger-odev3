@@ -9,4 +9,13 @@
     <string name="welcome">Welcome</string>
     <string name="settings_page">Settings Page</string>
     <string name="back_icon">Back Icon</string>
+    <string name="home_page">Home Page</string>
+    <string name="setting_image">setting image</string>
+    <string name="write_note">Write Note</string>
+    <string name="note">Note</string>
+    <string name="write_yourself_a_note">Write yourself a note</string>
+    <string name="join_now">JOIN NOW</string>
+    <string name="create_new_password">Create New Password</string>
+    <string name="enter_e_mail">Enter e-mail</string>
+    <string name="send_password">send password</string>
 </resources>
